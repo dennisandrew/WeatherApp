@@ -1,4 +1,4 @@
-package com.plcoding.weatherapp
+package com.dennisandrew.weatherapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

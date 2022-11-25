@@ -1,4 +1,4 @@
-package com.plcoding.weatherapp
+package com.dennisandrew.weatherapp
 
 import org.junit.Test
 

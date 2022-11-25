@@ -16,4 +16,4 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// https://www.youtube.com/watch?v=eAbKK7JNxCE 36:05
+// https://www.youtube.com/watch?v=eAbKK7JNxCE 55:09

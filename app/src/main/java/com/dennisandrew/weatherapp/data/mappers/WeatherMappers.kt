@@ -8,7 +8,7 @@ import com.dennisandrew.weatherapp.domain.weather.WeatherType
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-data class IndexWeatherData(
+private data class IndexWeatherData(
     val index: Int,
     val data: WeatherData
 )

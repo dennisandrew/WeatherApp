@@ -6,15 +6,16 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
-import androidx.compose.material.contentColorFor
 import androidx.core.content.ContextCompat
 import com.dennisandrew.weatherapp.domain.location.LocationTracker
 import com.google.android.gms.location.FusedLocationProviderClient
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.suspendCancellableCoroutine
+import javax.inject.Inject
 import kotlin.coroutines.resume
 
-
-class DefaultLocationTracker(
+@ExperimentalCoroutinesApi
+class DefaultLocationTracker @Inject constructor(
     private val locationClient: FusedLocationProviderClient, private val application: Application
 ) : LocationTracker {
     override suspend fun getCurrentLocation(): Location? {

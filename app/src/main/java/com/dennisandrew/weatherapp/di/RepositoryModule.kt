@@ -1,8 +1,6 @@
 package com.dennisandrew.weatherapp.di
 
-import com.dennisandrew.weatherapp.data.location.DefaultLocationTracker
 import com.dennisandrew.weatherapp.data.repository.WeatherRepositoryImpl
-import com.dennisandrew.weatherapp.domain.location.LocationTracker
 import com.dennisandrew.weatherapp.domain.repository.WeatherRepository
 import dagger.Binds
 import dagger.Module

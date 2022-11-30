@@ -8,7 +8,12 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
@@ -36,28 +41,33 @@ class MainActivity : ComponentActivity() {
         ) {
             viewModel.loadWeatherInfo()
         }
-        permissionLauncher.launch(arrayOf(
-            Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION,
-        ))
+        permissionLauncher.launch(
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+            )
+        )
         setContent {
             WeatherAppTheme {
                 Box(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
                 ) {
                     Column(
                         modifier = Modifier
                             .fillMaxSize()
-                            .background(DarkBlue)
+                            .background(DarkBlue),
+                        verticalArrangement = Arrangement.SpaceEvenly
                     ) {
                         WeatherCard(
                             state = viewModel.state,
                             backgroundColor = DeepBlue
                         )
-                        Spacer(modifier = Modifier.height(16.dp))
                         WeatherForecast(state = viewModel.state)
+                        Spacer(modifier = Modifier.height(8.dp))
+
+
                     }
-                    if(viewModel.state.isLoading) {
+                    if (viewModel.state.isLoading) {
                         CircularProgressIndicator(
                             modifier = Modifier.align(Alignment.Center)
                         )
